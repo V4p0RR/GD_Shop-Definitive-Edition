@@ -1,0 +1,31 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: GD_shop_backend
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/shop_sp?useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: "123456"
+    database: 1
+    lettuce:
+      pool:
+        max-active: 100
+        max-idle: 50
+        min-idle: 1
+        time-between-eviction-runs: 10s
+  jackson:
+    default-property-inclusion: NON_NULL
+
+mybatis-plus:
+  type-aliases-package: com.gdshop.entity
+
+logging:
+  level:
+    "[com.gdshop]": debug
