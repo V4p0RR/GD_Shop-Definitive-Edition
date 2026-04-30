@@ -39,3 +39,4 @@ $RECYCLE.BIN/
 *.env
 credentials.json
 要求.md
+.gitignore
