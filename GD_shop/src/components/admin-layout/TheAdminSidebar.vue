@@ -146,34 +146,12 @@ const allMenuData = [
     order: 7,
     requiresSuperAdmin: true,
   },
-  {
-    id: "system",
-    title: "系统设置",
-    icon: "setting",
-    path: "/system",
-    category: "系统管理",
-    order: 8,
-    children: [
-      {
-        id: "system-config",
-        title: "系统配置",
-        icon: "tools",
-        path: "/system_config",
-      },
-      {
-        id: "system-log",
-        title: "操作日志",
-        icon: "history",
-        path: "/system_log",
-      },
-    ],
-  },
 ];
 
 const menuData = computed(() => {
   if (authStore.role === 1) return allMenuData;
   // 运营看不到用户管理
-  return allMenuData.filter(item => !item.requiresSuperAdmin);
+  return allMenuData.filter((item) => !item.requiresSuperAdmin);
 });
 
 // ================== 计算属性 ==================

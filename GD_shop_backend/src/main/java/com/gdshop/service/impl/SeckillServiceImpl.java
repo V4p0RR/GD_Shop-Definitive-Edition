@@ -5,8 +5,10 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.gdshop.dto.Result;
 import com.gdshop.entity.SeckillActivity;
 import com.gdshop.entity.SeckillOrder;
+import com.gdshop.entity.Sku;
 import com.gdshop.mapper.SeckillActivityMapper;
 import com.gdshop.mapper.SeckillOrderMapper;
+import com.gdshop.mapper.SkuMapper;
 import com.gdshop.service.ISeckillService;
 import com.gdshop.utils.RedisConstants;
 import com.gdshop.utils.RedisIdWorker;
@@ -43,6 +45,8 @@ public class SeckillServiceImpl extends ServiceImpl<SeckillActivityMapper, Secki
     private RedissonClient redissonClient;
     @Resource
     private SeckillOrderMapper seckillOrderMapper;
+    @Resource
+    private SkuMapper skuMapper;
 
     private static final DefaultRedisScript<Long> SECKILL_SCRIPT;
 
@@ -143,6 +147,12 @@ public class SeckillServiceImpl extends ServiceImpl<SeckillActivityMapper, Secki
     public Result queryActivityList() {
         List<SeckillActivity> list = list(new LambdaQueryWrapper<SeckillActivity>()
                 .orderByDesc(SeckillActivity::getCreateTime));
+        for (SeckillActivity act : list) {
+            if (act.getSkuId() != null) {
+                Sku sku = skuMapper.selectById(act.getSkuId());
+                if (sku != null) act.setImage(sku.getImage());
+            }
+        }
         return Result.ok(list);
     }
 

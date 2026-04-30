@@ -4,6 +4,7 @@
     <div v-if="activities.length === 0" class="empty">暂无秒杀活动</div>
     <div class="seckill-grid">
       <div v-for="act in activities" :key="act.id" class="card seckill-card">
+        <img :src="act.image || '/placeholder.png'" :alt="act.spuName" class="seckill-img" />
         <div class="spu-name">{{ act.spuName }}</div>
         <div class="price-row">
           <span class="seckill-price">¥{{ (act.seckillPrice / 100).toFixed(2) }}</span>
@@ -47,6 +48,7 @@ async function doSeckill(act) {
 <style scoped>
 .seckill-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 16px; }
 .seckill-card { text-align: center; }
+.seckill-img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 8px; }
 .spu-name { font-size: 16px; font-weight: bold; margin-bottom: 8px; }
 .price-row { margin: 8px 0; }
 .seckill-price { font-size: 24px; color: #e4393c; font-weight: bold; }

@@ -15,7 +15,7 @@
     <!-- 右侧操作区 -->
     <div class="action-area">
       <!-- 搜索按钮（加了 @keyup.enter 实现回车搜索） -->
-      <div class="search-box">
+      <!-- <div class="search-box">
         <t-input
           placeholder="搜索..."
           class="search-input"
@@ -29,7 +29,7 @@
             />
           </template>
         </t-input>
-      </div>
+      </div> -->
 
       <!-- 通知（填充真实内容 + 点击处理） -->
       <t-dropdown trigger="click">
@@ -46,27 +46,6 @@
         </t-tooltip>
         <template #dropdown>
           <t-dropdown-menu class="notification-dropdown">
-            <!-- <t-dropdown-item value="1">
-              <t-icon
-                name="notification-filled"
-                style="margin-right: 8px; color: var(--td-brand-color)"
-              />
-              系统更新：V1.0.1 已发布
-            </t-dropdown-item>
-            <t-dropdown-item value="2">
-              <t-icon
-                name="user-add"
-                style="margin-right: 8px; color: var(--td-success-color)"
-              />
-              新增用户：张三已注册
-            </t-dropdown-item>
-            <t-dropdown-item value="3">
-              <t-icon
-                name="mail"
-                style="margin-right: 8px; color: var(--td-warning-color)"
-              />
-              您有新的消息待查看
-            </t-dropdown-item> -->
             <t-dropdown-item
               value="all"
               class="view-all-btn"
@@ -84,10 +63,10 @@
       <!-- 用户信息（绑定 value + 点击处理） -->
       <t-dropdown trigger="click">
         <div class="user-info">
-          <t-avatar
+          <!-- <t-avatar
             image="https://tdesign.gtimg.com/starter/avatar1.jpg"
             size="small"
-          />
+          /> -->
           <span class="user-name">管理员</span>
           <t-icon name="chevron-down" size="small" />
         </div>

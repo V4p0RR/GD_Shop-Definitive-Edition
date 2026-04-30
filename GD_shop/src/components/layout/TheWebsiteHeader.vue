@@ -45,7 +45,7 @@
       <!-- 操作区域 -->
       <div class="header-actions">
         <!-- 搜索按钮 -->
-        <div class="search-container">
+        <!-- <div class="search-container">
           <button class="search-btn" @click="toggleSearch">
             <t-icon name="search" class="search-icon" />
           </button>
@@ -66,13 +66,13 @@
               <t-icon name="close" />
             </button>
           </div>
-        </div>
+        </div> -->
 
         <!-- 主题切换 -->
         <ThemeToggle class="theme-toggle" />
 
         <!-- 认证按钮 -->
-        <div class="auth-buttons">
+        <!-- <div class="auth-buttons">
           <t-button
             theme="default"
             variant="outline"
@@ -81,17 +81,7 @@
           >
             登录
           </t-button>
-          <!-- <t-button
-            theme="primary"
-            class="register-btn"
-            @click="handleRegister"
-          >
-            立即注册
-            <template #suffix>
-              <t-icon name="arrow-right" />
-            </template>
-          </t-button> -->
-        </div>
+        </div> -->
 
         <!-- 移动端菜单按钮 -->
         <button class="mobile-menu-btn" @click="toggleMobileMenu">
